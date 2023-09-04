@@ -1,0 +1,172 @@
+/*Variables*/
+:root {
+	/*Primary*/
+	--soft-blue: hsl(215, 51%, 70%);
+	--cyan: hsl(178, 100%, 50%);
+
+	/*Neutral colors*/
+	--main-bg: hsl(217, 54%, 11%);
+	--card-bg: hsl(216, 50%, 16%);
+	--line-color: hsl(215, 32%, 27%);
+	--white: hsl(0, 0%, 100%);
+
+	/*Font familly*/
+	--primary-font: 'Outfit', sans-serif;
+
+	--transition: .3s ease-out;
+}
+
+/*General style*/
+html {
+	box-sizing: border-box;
+	font-size: 100%;
+}
+
+*,*:before,*:after {
+	box-sizing: inherit;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	min-height: 100vh;
+	background-color: var(--main-bg);
+	color: var(--white);
+	font-family: var(--primary-font);
+}
+
+
+p {
+	font-size: 18px;
+	font-weight: 300;
+	color: var(--soft-blue);
+}
+
+img {
+	width: 100%;
+    object-fit: cover;
+}
+
+.card-container {
+	display: flex;
+	flex-direction: column;
+
+	background-color: var(--card-bg);
+	max-width: 352px;
+	padding: 22px;
+	border-radius: 20px;
+	box-shadow: 0 20px 25px 15px rgb(0, 0, 0, 0.05),
+	0px 40px 30px 15px rgb(0, 0, 0, 0.1);
+}
+
+.illustration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.illustration {
+	height: 303px;
+}
+
+.illustration svg{
+	display: none;
+	position: absolute;
+
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+}
+
+.illustration:hover svg{
+	display: block;
+}
+
+.overlay {
+    position: absolute;
+    background-color: var(--cyan);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity .3s ease-out;
+}
+
+.illustration:hover .overlay {
+    opacity: .4;
+}
+
+.text-content h2 {
+	width: fit-content;
+	cursor: pointer;
+	transition: var(--transition);
+	margin: 27px 0 20px 0;
+}
+
+.text-content h2:hover {
+	color: var(--cyan);
+}
+
+.text-content .top > p {
+	margin-bottom: 30px;
+}
+
+.information-wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.information-wrapper .inner {
+	display: flex;
+	align-items: center;
+}
+
+.information-wrapper .inner svg {
+    margin: 0 10px 0 0;
+}
+
+.information-wrapper .inner:first-child p {
+    color: var(--cyan);
+    font-weight: 400;
+}
+
+.separator {
+	height: 1px;
+	background-color: var(--line-color);
+	margin: 20px 0 13px 0;
+}
+
+.author-info {
+	display: flex;
+    align-items: center;
+
+    margin: 0 0 5px 0;
+}
+
+.author-info img {
+	width: 33px;
+    height: 33px;
+    margin: 0 10px 0 0;
+    border: 1px solid;
+    border-radius: 50%;
+}
+
+.author-info span {
+	color: var(--white);
+	cursor: pointer;
+}
+
+.author-info span:hover {
+	color: var(--cyan);
+	transition: var(--transition);
+}
